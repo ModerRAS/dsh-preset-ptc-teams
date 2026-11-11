@@ -22,13 +22,13 @@
 ## 打包形态
 
 配置型 bundle（照 `cordis-plugin-development → templates/mcp` 模板）：
-`dsh/package.json`（`dsh.bundle.patch`）+ `dsh/cordis.patch.yml` + `dsh/locale/*.json` + `dsh/icon.svg`。
+`package.json`（`dsh.bundle.patch`）+ `cordis.patch.yml` + `locale/*.json` + `icon.svg`，全部位于仓库根目录。
 无 Host/Client 代码、无依赖、无构建步骤——`install_bundle` 直装。这是有意偏离 dsh-llm-wiki 重型 packaging（Host entry re-export `../dist`）之处：纯预设不需要 JS。
 
 ## 安装
 
 1. DSH 命令（desktop profile，当前会话所在 profile）：
-   `plugin_manager` → `action: install_bundle`，`target` 填本仓库的绝对 `dsh/` 目录。
+   `plugin_manager` → `action: install_bundle`，`target` 填本仓库根目录的绝对路径（`package.json` 所在目录）。
 2. 绝不手改 profile 的 `package.json` / `cordis.patch.yml`（由 `install_bundle` 写）。
 3. 重启 profile（替换安装需 restart 加载新模块世代；本包无 JS，一般 HMR 即生效）。
 
