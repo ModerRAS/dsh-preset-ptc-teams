@@ -1,0 +1,11 @@
+{
+  "name": "dsh-preset-ptc-teams",
+  "version": "1.0.0",
+  "private": true,
+  "description": "PTC Teams agent preset for DeepSeek Harness: ptc composition without subagent tools (use teammates instead).",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ModerRAS/dsh-preset-ptc-teams.git"
+  }
+}
